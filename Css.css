@@ -33,7 +33,7 @@ a
 }
 #home
 {
-	background: url(D:/Html/Piyal/image/bg.jpg) center fixed;
+	background: url(image/bg.jpg) center fixed;
 	display:table;
 	height:100%;
 	width:100%;
@@ -42,7 +42,7 @@ a
 }
 #project
 {
-	background: url(D:/Html/Piyal/image/skill.jpg);
+	background: url(image/skill.jpg);
 	display:table;
 	height:auto;
 	width:100%;
