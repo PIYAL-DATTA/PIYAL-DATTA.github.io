@@ -33,7 +33,7 @@ a
 }
 #home
 {
-	background: url(image/bg.jpg) center fixed;
+	background: url("image/bg.jpg") center fixed;
 	display:table;
 	height:100%;
 	width:100%;
