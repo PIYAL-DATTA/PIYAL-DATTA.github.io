@@ -1,0 +1,313 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="relative bg-white overflow-hidden" x-data="{open: false}">
+    <div class="max-w-7xl mx-auto">
+        <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+            <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <polygon points="50,0 100,0 50,100 0,100" />
+            </svg>
+
+            <div>
+                <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+                    <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
+                        <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+                            <div class="flex items-center justify-between w-full md:w-auto">
+                                <a href="#">
+                                    <!-- Name change -->
+                                    <span class="sr-only">Blood Donor</span>
+                                    <img class="h-8 w-auto sm:h-10" src="~/svg/logo.svg">
+                                </a>
+                                <div class="-mr-2 flex items-center md:hidden">
+                                    <button @@click="open = !open" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                                        <span class="sr-only">Open main menu</span>
+                                      
+                                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex md:ml-10 md:pr-4 md:space-x-8">
+                            <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Articles</a>
+
+                            <a href="#" class="font-medium text-gray-500 hover:text-gray-900 whitespace-nowrap ">Area Map</a>
+
+                            <a href="#" class="font-medium text-gray-500 hover:text-gray-900 whitespace-nowrap">Saved Lives</a>
+
+                            <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Donate</a>
+
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                                <a class="font-medium text-gray-500 hover:text-gray-900">
+                                @UserManager.GetUserName(User)
+
+                                </a>
+                            }
+                            else
+                            {
+                                <a asp-area="Identity" asp-page="/Account/Login" class="block w-full px-5 py-3 text-center font-medium text-red-600 bg-gray-50 hover:bg-gray-100"> Log in </a>
+                            }
+                        </div>
+                    </nav>
+                </div>
+
+                <!--
+                  Mobile menu, show/hide based on menu open state.
+
+                  Entering: "duration-150 ease-out"
+                    From: "opacity-0 scale-95"
+                    To: "opacity-100 scale-100"
+                  Leaving: "duration-100 ease-in"
+                    From: "opacity-100 scale-100"
+                    To: "opacity-0 scale-95"
+                -->
+                <div class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden" x-bind:class="open ? '' : 'hidden'">
+                    <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+                        <div class="px-5 pt-4 flex items-center justify-between">
+                            <div>
+                                <img class="h-8 w-auto" src="~/svg/logo.svg" alt="">
+                            </div>
+                            <div class="-mr-2">
+                                <button @@click="open = false" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                    <span class="sr-only">Close main menu</span>
+                                    
+                                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="px-2 pt-2 pb-3 space-y-1">
+                            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Articles</a>
+
+                            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Area Map</a>
+
+                            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Saved Lives</a>
+
+                            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Donate</a>
+                        </div>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            @UserManager.GetUserName(User)
+                        } else
+                        {
+                            <a asp-area="Identity" asp-page="/Account/Login" class="block w-full px-5 py-3 text-center font-medium text-red-600 bg-gray-50 hover:bg-gray-100"> Log in </a>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                <div class="sm:text-center lg:text-left">
+                    <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                        <span class="block xl:inline">Blood Donor</span> <br />
+                        <span class="block text-red-400 xl:inline">Saves Lives in Need</span>
+                    </h1>
+                    <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                        We have a rich list of donors around <b>Bangladesh</b> who are vigilant to respond in your needs.
+                    </p>
+                    <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                        <div class="rounded-md shadow relative">
+                            <span class="absolute top-0 bottom-0 left-0 right-0 w-full h-full animate-ping bg-red-100 -z-10"></span>
+                            <a href="#" class="w-full flex items-center justify-center px-8 py-3 border z-10 border-transparent text-base font-medium rounded-md text-white bg-red-400 hover:bg-red-500 md:py-4 md:text-lg md:px-10 "> Request Blood </a>
+                        </div>
+                        <div class="mt-3 sm:mt-0 sm:ml-3">
+                            <a asp-area="Identity" asp-page="/Account/Register" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-red-700 bg-red-100 hover:bg-red-200 md:py-4 md:text-lg md:px-10"> Be a Donor </a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+        <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="~/svg/bg.svg" alt="">
+    </div>
+</div>
+
+<!--This is a info section for people who need blood-->
+
+<div class="py-16 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 space-y-8 sm:px-6 lg:px-8">
+        <div class="text-base max-w-prose mx-auto lg:max-w-none">
+            
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">About <span class="text-red-400">Blood Donor</span> </p>
+        </div>
+        <div class="relative z-10 text-base max-w-prose mx-auto lg:max-w-5xl lg:mx-0 lg:pr-72">
+            <p class="text-md text-gray-500">
+                Blood donation is a selfless act that saves lives. Every day, patients in hospitals and emergency rooms 
+                across the country rely on blood transfusions to survive.However, with a limited supply of blood, it's crucial that 
+                individuals take the time to donate blood and help ensure that there is a steady supply of this life-saving resource.
+            </p>
+        </div>
+        <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-start">
+            <div class="relative z-10">
+                <div class="prose prose-indigo text-gray-500 mx-auto lg:max-w-none">
+                    <p>
+                        But in the time of emergency, it's hard to find someone suitable, willing
+                        and person to donate blood. And this is where we come in.You can use this website to :
+                    </p>
+                    <ul role="list">
+                        <li>You can search for possible donors in a specific area.</li>
+                        <li>You can find people with specific blood types. </li>
+                        <li>You can easily contact people who are willing to donate blood.</li>
+                        <li>You can find poeple with rare blood  type.  </li>
+                    </ul>
+                   
+                    
+                   
+                </div>
+                
+            </div>
+
+            <!-- a card -->
+            <div class="mt-12 relative text-base max-w-prose mx-auto lg:mt-0 lg:max-w-none">
+                <svg class="absolute top-0 right-0 -mt-20 -mr-20 lg:top-auto lg:right-auto lg:bottom-1/2 lg:left-1/2 lg:mt-0 lg:mr-0 xl:top-0 xl:right-0 xl:-mt-20 xl:-mr-20" width="404" height="384" fill="none" viewBox="0 0 404 384" aria-hidden="true">
+                    <pattern id="bedc54bc-7371-44a2-a2bc-dc68d819ae60" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                                <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+                            </pattern>
+                    <defs>
+                        
+                    </defs>
+                    <rect width="404" height="384" fill="url(#bedc54bc-7371-44a2-a2bc-dc68d819ae60)" />
+                </svg>
+                <blockquote class="relative bg-rose-200 rounded-lg shadow-lg">
+                    <div class="rounded-t-lg px-6 py-8 sm:px-10 sm:pt-10 sm:pb-8">
+                        <img src="~/svg/logo.svg" alt="" class="h-8">
+                        <div class="relative text-xl mt-8 font-medium">
+                            <svg class="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-gray-200" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                                <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+                            </svg>
+                            <p class="relative text-gray-900 ">You can also be a <span class="text-red-400 font-extrabold">donor</span> and help other in need.</p>
+                        </div>
+                    </div>
+                    <cite class="relative flex items-center sm:items-start bg-rose-600 rounded-b-lg not-italic py-5 px-6 sm:py-5 sm:pl-12 sm:pr-10 sm:mt-10">
+                       
+                        
+                    </cite>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- This is a info  section for Donors   -->
+<div class="relative bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+    <div class="absolute inset-0">
+        <div class="bg-white h-1/3 sm:h-2/3"></div>
+    </div>
+    <!--heading-->
+    <div class="relative max-w-7xl mx-auto">
+        <div class="text-center">
+            <h2 class="text-3xl tracking-tight font-semibold text-gray-900 sm:text-4xl">Learn More About <span class="text-red-400 font-extrabold">Blood Donation</span> </h2>
+            <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">A few things you should know before you decide to be a donor</p>
+        </div>
+        <!--first card-->
+        <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+                <div class="flex-shrink-0">
+                    <img class="h-48 w-full object-cover" src="~/svg/donation-1.svg" alt="">
+                </div>
+                <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                        <p class="text-sm font-medium text-indigo-600">
+                            <a href="https://www.who.int/campaigns/world-blood-donor-day/2019/who-can-give-blood" class="hover:underline"> Article </a>
+                        </p>
+                        <a href="https://www.who.int/campaigns/world-blood-donor-day/2019/who-can-give-blood" class="block mt-2">
+                            <p class="text-xl font-semibold text-gray-900">Who can <span class="text-red-400">donate</span> blood</p>
+                            <p class="mt-3 text-base text-gray-500">Most people can give blood if they are in good health. There are some basic requirements one  need to fulfill in order to become a blood donor...</p>
+                        </a>
+                    </div>
+                    <div class="mt-6 flex items-center">
+                        <div class="flex-shrink-0">
+                            <a href="https://www.who.int/">
+                                <img class="h-10 w-10 rounded-full" src="~/svg/who-logo.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm font-medium text-gray-900">
+                                <a href="https://www.who.int/" class="hover:underline">World Health Organization </a>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--2nd card-->
+
+            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+                <div class="flex-shrink-0">
+                    <img class="h-48 w-full object-cover" src="~/svg/donation-2.svg" alt="">
+                </div>
+                <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                        <p class="text-sm font-medium text-indigo-600">
+                            <a href="https://www.youtube.com/watch?v=Tfwq_vJHwT8" class="hover:underline"> Video </a>
+                        </p>
+                        <a href="https://www.youtube.com/watch?v=Tfwq_vJHwT8" class="block mt-2">
+                            <p class="text-xl font-semibold text-gray-900">Know what happens to your <span class="text-red-400">donated</span> blood</p>
+                            <p class="mt-3 text-base text-gray-500">The blood donation process from the time you arrive until the time you leave takes about an hour. The donation itself is only about 8-10 minutes on average...</p>
+                        </a>
+                    </div>
+                    <div class="mt-6 flex items-center">
+                        <div class="flex-shrink-0">
+                            <a href="https://www.redcross.org/">
+                                <span class="sr-only">American Red Cross</span>
+                                <img class="h-10 w-10 rounded-full" src="~/svg/red-cross-logo.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm font-medium text-gray-900">
+                                <a href="https://www.redcross.org/" class="hover:underline"> American Red Cross </a>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--3rd card-->
+
+            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+                <div class="flex-shrink-0">
+                    <img class="h-48 w-full object-cover" src="~/svg/donation-3-pic.svg" alt="">
+                </div>
+                <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                        <p class="text-sm font-medium text-indigo-600">
+                            <a href="https://www.providence.org/news/uf/456441683" class="hover:underline">Article </a>
+                        </p>
+                        <a href="https://www.providence.org/news/uf/456441683" class="block mt-2">
+                            <p class="text-xl font-semibold text-gray-900">When you should <span class="text-red-400">NOT</span>  donate blood</p>
+                            <p class="mt-3 text-base text-gray-500">Even though donation your blood is a noble act there are times you should consider not donation.Know when you can not donate blood...</p>
+                        </a>
+                    </div>
+                    <div class="mt-6 flex items-center">
+                        <div class="flex-shrink-0">
+                            <a href="https://www.providence.org/news/uf/456441683">
+                                <span class="sr-only">Daniela Metz</span>
+                                <img class="h-10 w-10 rounded-full" src="~/svg/providence-logo.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm font-medium text-gray-900">
+                                <a href="https://www.providence.org/news/uf/456441683" class="hover:underline">Providence </a>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,86 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="min-h-full flex">
+    <div class="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+        <div class="mx-auto w-full max-w-sm lg:w-96">
+            <div>
+                <img class="h-12 w-auto" src="~/svg/logo.svg" alt="Workflow">
+                <h2 class="mt-6 text-3xl font-extrabold text-gray-900">Sign up as a <span class="text-rose-400">DONOR</span> </h2>
+
+            </div>
+
+            <div class="mt-8">
+
+                <div class="mt-6">
+                    <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="space-y-6">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div>
+                            <label asp-for="Input.Email" class="block text-sm font-medium text-gray-700"> Email </label>
+                            <div class="mt-1">
+                                <input asp-for="Input.Email" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <span asp-validation-for="Input.Email" class="text-rose-600"></span>
+                            </div>
+                        </div>
+                        <div>
+                            <label asp-for="Input.Password" class="block text-sm font-medium text-gray-700"> Password </label>
+                            <div class="mt-1">
+                                <input asp-for="Input.Password" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <span asp-validation-for="Input.Password" class="text-rose-600"></span>
+                            </div>
+                        </div>
+                        <div>
+                            <label asp-for="Input.ConfirmPassword" class="block text-sm font-medium text-gray-700"> Confirm Password </label>
+                            <div class="mt-1">
+                                <input asp-for="Input.ConfirmPassword" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <span asp-validation-for="Input.ConfirmPassword" class="text-rose-600"></span>
+                            </div>
+                        </div>
+
+                        <button id="registerSubmit" type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-400 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hidden lg:block relative w-0 flex-1">
+        <img class="absolute inset-0 h-full w-full object-cover" src="~/svg/reg-page-pic.svg" alt="">
+    </div>
+</div>
+@*    <div class="col-md-6 col-md-offset-2">
+        <section>
+            <h3>Use another service to register.</h3>
+            <hr />
+            @{
+                if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                {
+                    <div>
+                        <p>
+                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
+                            about setting up this ASP.NET application to support logging in via external services</a>.
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins)
+                                {
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+                }
+            }
+        </section>
+    </div>*@
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
