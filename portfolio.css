@@ -607,17 +607,6 @@ color: #878787;
     border-radius: 50%;
   }
   canvas {
-    position: relative;
-    width: 100%;
-    height: 90vh;
-  }
-  .blink{
-    display: flex;
-    justify-content: center;
-    animation: blink 1s infinite alternate;
-  }
-  @keyframes blink {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+    display: none;
   }
 }
