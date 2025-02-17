@@ -1,478 +1,847 @@
+<!DOCTYPE html>
 <html>
+
 <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Piyal Datta | Web & Software Developer</title>
+  <meta charset="utf-8">
+  <!-- For Bootstrap 5 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- For JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-<!-- Latest compiled and minified CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Font -->
+  <!-- Plafair -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <!-- Trirong -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- Sofia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sofia&family=Trirong:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <!-- Kanit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!--   Font Awesome  -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/b5c2cc2edf.js" crossorigin="anonymous"></script>
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- END -->
 
-<!-- Latest compiled JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
 
-<!--  For NAV TAB  -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="apple-touch-icon" href="logo.png" />
+  <link rel="icon" href="logo.png" />
+  <meta name="description" content="A WebGL fluid simulation that works in mobile browsers." />
 
-<!--  FOR FONT -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Webgl Fluid Simulation" />
+  <meta property="og:description" content="A WebGL fluid simulation that works in mobile browsers." />
+  <script type="text/javascript" src="js/dat.gui.min.js"></script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-
-<!--   logo   -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
-<script src="https://kit.fontawesome.com/b5c2cc2edf.js" crossorigin="anonymous"></script>
-
-<link rel="stylesheet" href="Css.css">
-
-<title>Piyal Datta</title>
-
+  <!-- For CSS -->
+  <link rel="stylesheet" href="portfolio.css">
 </head>
 
 <body>
-	<!-- NAVBAR -->
-	<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
-		<div class="container-fluid">
-			<a class="navbar-brand ms-2" href="#">
-				<img src="image\piyal.jpg" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> 
-			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="mynavbar">
-				<ul class="navbar-nav me-auto">
-				<li class="nav-item">
-					<a class="nav-link active" href="#home">HOME</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#about">About Me</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#project">Portfolio</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#skill">Skills</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#contact">Contact Me</a>
-				</li>
-				</ul>
-				<div class="d-flex">
-					<a href="image\Piyal Datta CV.pdf" download>
-						Resume<i class="fa-solid fa-download ps-2"></i>
-					</a>
-				</div>
-		  	</div>
-		</div>
-	  </nav>
-
-<!-- HOME -->
-<div id = "home">
-  <div class="d-flex justify-content-center mb-3">
-    <div><br></div>
-  </div>
-    <div class="d-flex justify-content-center mb-3">
-    <div><br></div>
-  </div>
-
-<div style = "margin-top: 25vh;">
-  <div class="d-flex justify-content-center mb-4">
-    <div>
-	  <img src="image\piyal.jpg" class="rounded-circle img-fluid" width="150" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);">
-	</div>
-  </div>
-  <div class="d-flex justify-content-center mb-3 text-light">
-  
-	<h1 style="text-shadow: 2px 2px 4px #000000;">PIYAL DATTA</h1>
-
-  </div>
-  <div class="d-flex justify-content-center mb-3 text-light">
-    <div>
-	  <h3 style="color: #B8E2F2; text-shadow: 2px 2px 4px #000000;"><b><span class="type"></span></b></h3>		
-	  <script src="typed.js"></script>
-	  <script>
-		var typed = new Typed(".type", {
-	    strings: ["WEB DEVELOPER", "PROGRAMMER","SOFTWARE DEVELOPER","DATA ENGINEER"],
-	    typeSpeed: 60,
-	    backSpeed: 60,
-	    loop: true
-	    });
-	  </script>
-	</div>
-  </div>
-  <div class="d-flex justify-content-center mb-3 text-light">
-    <div><h4 style="text-shadow: 2px 2px 4px #000000;">WELCOME TO MY PORTFOLIO</h4></div>
-  </div>
-</div>  
-  
-</div>
-
-<!-- About -->
-<div id="about">
-	<div class = "container mt-2">
-		<ul class="nav nav-tabs">
-			<li class="nav-item col-sm-4 text-center trirong">
-				<a class="nav-link active" data-toggle="tab" href="#EDUCATIONAL_QUALIFICATION">EDUCATIONAL QUALIFICATION</a>
-			</li>
-			<li class="nav-item col-sm-4 text-center trirong">
-				<a class="nav-link" data-toggle="tab" href="#PERSONAL_INTEREST">PERSONAL INTEREST</a>
-			</li>
-			<li class="nav-item col-sm-4 text-center trirong">
-				<a class="nav-link" data-toggle="tab" href="#OTHERS">OTHERS</a>
-			</li>
-		</ul>
-		<div class="tab-content">
-			<div class="tab-pane active" id="EDUCATIONAL_QUALIFICATION">
-				<div class="row border g-0 rounded shadow-sm">
-					<div class="col p-4">
-						<h3 class="playfair" style="padding:20px">Undergraduate Level</h3>
-						<ul class="trirong">
-						<li><em>Ahsanullah University of Science and Technology</em></li>
-						<li>Deptartment of CSE</li>
-						<li>2020 - 2024</li>
-						</ul>
-					</div>
-					<div class="col-auto m-2">
-						<img src="image\austBG.jpg" class="img-thumbnail dimension" style="width:600px; height:300px">
-					</div>
-				</div>
-				
-				<div class="row border g-0 rounded shadow-sm">
-					<div class="col p-4">
-					<h3 class="playfair" style="padding:20px">College</h3>
-						<ul class="trirong">
-						<li><em>Government Laboratory High School</em></li>
-						<li>Dhaka Board</li>
-						<li>Group : Scienece</li>
-						<li>HSC Passing year : 2019</li>
-						</ul>
-					</div>
-					<div class="col-auto m-2">
-						<img src="image\college.jpg" class="img-thumbnail dimension" style="width:600px; height:300px">
-					</div>
-				</div>
-				
-				<div class="row border g-0 rounded shadow-sm">
-					<div class="col p-4">
-						<h3 class="playfair" style="padding:20px">School</h3>
-						<ul class="trirong">
-						<li><em>Rampura Ekramunnesa Boys' High School</em></li>
-						<li>From class 8 to 10</li>
-						<li>Dhaka Board</li>
-						<li>Group : Scienece</li>
-						<li>SSC Passing year : 2016</li>
-						<li>JSC Passing year : 2014</li>
-						</ul>
-					</div>
-					<div class="col-auto m-2">
-						<img src="image\school2.jpg" class="img-thumbnail dimension" style="width:600px; height:300px">
-					</div>
-				</div>
-				<div class="row border g-0 rounded shadow-sm">
-					<div class="col p-4">
-						<h3 class="playfair" style="padding:20px">School</h3>
-						<ul class="trirong">
-						<li><em>Chittagong Government Boys' High School</em></li>
-						<li>From class 5 to 7</li>
-						<li>PSC Result : 1st division</li>
-						</ul>
-					</div>
-					<div class="col-auto m-2">
-						<img src="image\school1.jpg" class="img-thumbnail dimension" style="width:600px; height:300px">
-					</div>
-				</div>				
-			</div>
-				
-				<div class="tab-pane" id="PERSONAL_INTEREST">
-
-				<div class="row border g-0 rounded shadow-sm text-center playfair fw-bold" style="font-size: 16px;">
-					<div class="col-sm-4 p-4">
-					  <p>MOVIES</p>
-					  <img src="https://images.moviesanywhere.com/4d9df0e6b0bd732b3d1fa967b5b919fa/1adaca39-ae5e-4867-91fd-6025d3d08eb4.jpg" class="img-fluid">
-					</div>
-					<div class="col-sm-4 p-4"> 
-					  <p>SERIES</p>
-					  <img src="https://m.media-amazon.com/images/M/MV5BOTk2NzUyOTctZDdlMS00MDJlLTgzNTEtNzQzYjFhNjA0YjBjXkEyXkFqcGdeQXVyMjg1NDcxNDE@._V1_FMjpg_UX1000_.jpg" class="img-fluid">
-					</div>
-					<div class="col-sm-4 p-4"> 
-					  <p>ANIMES & MANGA</p>
-					  <img src="image\anime.jpg" class="img-fluid">
-					</div>
-					<div class="col-sm-4 p-4">
-					  <p>READING BOOK</p>
-					  <img src="https://e0.pxfuel.com/wallpapers/993/748/desktop-wallpaper-so-cute-girl-reading-book-amazing-art-painting-book-so-cute-girly.jpg" class="img-fluid">
-					</div>
-					<div class="col-sm-4 p-4"> 
-					  <p>GAMES</p>
-					  <img src="image\game.jpg" class="img-fluid">
-					</div>
-					<div class="col-sm-4 p-4"> 
-					  <p>SCIENCE</p>
-					  <img src="image\science.jpg" class="img-fluid">
-					</div>
-				 
-				 </div>
-
-				</div>
-
-				<div class="tab-pane" id="OTHERS">
-				
-					<div class="row border g-0 rounded shadow-sm">
-					<div class="col p-3">
-						<section class="trirong px-3" style="text-align: justify; text-justify: inter-word;">Motivated and fast-learning professional with a keen ability to adapt
-							to modern technologies. Committed to providing efficient solutions
-							and writing clean, comprehensible code, while continuously striving
-							to expand knowledge and skills.</section>
-
-						<h3 class="playfair" style="padding:10px;">SOFT SKILLS</h3>
-						<section class="trirong px-3" style="text-align: justify; text-justify: inter-word;">Time management, Teamwork, Adaptability, Problem finding and solving, Communication, Active listening, Patience, Presentation skills, Helpful.</section>
-
-						<h3 class="playfair" style="padding:10px;">Others</h3>
-						<section class="trirong px-3" style="text-align: justify; text-justify: inter-word;">Microsoft Office, Git and GitHub, Overleaf, Adobe Photoshop, Google Colaboratory, Zoom, Google Meet.</section>
-					</div>
-					<div class="col-auto m-2">
-						<img src="image\piyal3.jpg" class="img-thumbnail dimension" style="width:600px; height:400px">
-					</div>
-					</div>
-				
-				</div>		
-			</div>
-		</div>
-		
-</div>
-
-<!-- Skills -->
-<div id="skill" class="mt-5 container" style="background-color: #dbf0f8;">
-	<div class="container p-5">
-		<div class="pb-4 sofia text-center">
-			<p style="font-size: 30px;">AREA OF EXPERTISE</p>
-		</div>
-		<div class="row p-3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);">
-			<div class="col-2"><img src="image\logo1.png" class="img-fluid"></div>
-			<div class="col-2"><img src="image\logo2.png" class="img-fluid"></div>
-			<div class="col-2"><img src="image\logo3.png" class="img-fluid"></div>
-			<div class="col-2"><img src="image\logo4.png" class="img-fluid"></div> 
-			<div class="col-2"><img src="image\logo5.png" class="img-fluid"></div>
-			<div class="col-2"><img src="image\logo6.png" class="img-fluid"></div>				
-		</div>
-		<div class="row p-3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);">
-			<div class="col-2"><img src="image\logo7.png" class="img-fluid"></div>
-			<div class="col-2"><img src="image\logo8.png" class="img-fluid pt-3"></div>
-			<div class="col-2"><img src="image\logo9.png" class="img-fluid"></div>
-			<div class="col-2"><img src="image\logo10.png" class="img-fluid"></div>
-			<div class="col-2"><img src="image\logo11.png" class="img-fluid"></div>
-			<div class="col-2"><img src="image\logo12.png" class="img-fluid"></div>
-		</div>
-		<div class="row p-3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);">
-			<div class="col-2"><img src="https://img-resize-cdn.joshmartin.ch/768x0%2Cc3537b9f46b5f6055fbc8b4cd03b6b2cc63fc2eefd3d8cd9f0c9f99a5933e496/https://joshmartin.ch/app/uploads/2017/10/css3.svg" class="img-fluid"></div>
-			<div class="col-2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png" class="img-fluid p-2"></div>
-			<div class="col-2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/800px-PHP-logo.svg.png" class="img-fluid pt-4"></div>
-			<div class="col-2"><img src="https://automationpanda.com/wp-content/uploads/2017/09/django-logo-negative.png" class="img-fluid pt-4"></div>
-			<div class="col-2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Three.js_Icon.svg/800px-Three.js_Icon.svg.png" class="img-fluid"></div>
-			<div class="col-2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Selenium_Logo.png/1200px-Selenium_Logo.png" class="img-fluid p-2"></div>
-		</div>
-	</div>
-</div>
-
-<!--   Projects   -->
-<div id="project" class="pb-3 container bg-light">
-<div class="p-4 sofia text-center">
-	<p style="font-size: 30px;">PROJECTS</p>
-</div>
-<div class="container mt-3">
-<div class="row">
-<div id="demo" class="carousel slide pb-5" data-bs-ride="carousel">
-
-  <!-- Indicators/dots -->
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-	<button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
-	<button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
-	<button type="button" data-bs-target="#demo" data-bs-slide-to="6"></button>
-  </div>
-  
-  <!-- The slideshow/carousel -->
-  <div class="carousel-inner" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5); border-radius: 10px; text-shadow: 2px 2px 4px #000000;">
-    <div class="carousel-item active">
-      <img src="image\pj1.jpg" alt="Los Angeles" class="d-block img-fluid" style="width:1200px; height: 400px;">
-      <div class="carousel-caption">
-        <h3 class="playfair text-dark">DONOR</h3>
-		<h5 class="playfair text-dark fw-bold">{ HTML, CSS, Bootstrap, PHP, SQL }</h5>
-        <h6 class="trirong text-dark">
-			A blood donation website
-			where users can find donors
-			based on their location and required blood type.
-		</h6>
-		</div>
+  <!-- Nav -->
+  <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark mb-5">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse container navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <a class="navbar-brand playfair" href="javascript:void(0)">
+            <h3 style="text-shadow: 0 0 3px #FFFFFF, 0 0 5px #8A2BE2;">PIYAL DATTA</h3>
+          </a>
+        </ul>
+        <div class="d-flex">
+          <ul class="navbar-nav me-auto" style="font-weight: 500;">
+            <li class="nav-item">
+              <a class="nav-link" href="#videoBackground">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#home">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#resume">Resume</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="carousel-item">
-      <img src="image\pj2.jpg" alt="Chicago" class="d-block img-fluid" style="width:1200px; height: 400px;">
-      <div class="carousel-caption">
-        <a href="https://github.com/PIYAL-DATTA/CGPA-Generator">
-			<h3 class="playfair">CGPA Generator</h3>
-		</a>
-		<h5 class="playfair fw-bold">{ JAVA Swing }</h5>
-        <h6 class="trirong">
-			Software for automatically calculating CGPA based on students’
-			marks, tailored to the AUST
-			CGPA system
-		</h6>
-      </div> 
-    </div>
-    <div class="carousel-item">
-      <img src="image\pj3.jpg" alt="New York" class="d-block img-fluid" style="width:1200px; height: 400px;">
-      <div class="carousel-caption">
-        <h3 class="playfair">HELICOPTER</h3>
-		<h5 class="playfair fw-bold">{ Kotlin, Android Studio }</h5>
-        <h6 class="trirong">
-			Android game using Kotlin and
-			Java, similar to Flappy Bird but
-			featuring bullets instead of walls
-		</h6>
-      </div>  
-    </div>
-	<div class="carousel-item">
-      <img src="image\hospital.png" alt="New York" class="d-block img-fluid" style="width:1200px; height: 400px;">
-      <div class="carousel-caption">
-		<a href="https://github.com/PIYAL-DATTA/Hospital">
-        	<h3 class="playfair text-dark">HOSPITAL WEBSITE</h3>
-		</a>
-		<h5 class="playfair text-dark fw-bold">{ HTML, CSS, Bootstrap, PHP, SQL, JavaScript }</h5>
-        <h6 class="trirong text-dark">
-			A website for hospitals featuring an administrative panel.
-		</h6>
-      </div>  
-    </div>
-	<div class="carousel-item">
-		<img src="image\ip.png" alt="New York" class="d-block img-fluid" style="width:1200px; height: 400px;">
-		<div class="carousel-caption">
-		  <a href="https://github.com/PIYAL-DATTA/IP-MONITORING">
-		  	<h3 class="playfair text-dark">IP MONITORING</h3>
-		  </a>
-		  <h5 class="playfair fw-bold text-dark">{ HTML, CSS, Bootstrap, PHP }</h5>
-		  <h6 class="trirong text-dark">
-			A website for retrieving detailed
-			information about specific IP addresses, including location, operating system, hostname, and
-			more.
-		  </h6>
-		</div>  
-	  </div>
-	  <div class="carousel-item">
-		<img src="image\admin.png" alt="New York" class="d-block img-fluid" style="width:1200px; height: 400px;">
-		<div class="carousel-caption">
-		  <a href="https://github.com/PIYAL-DATTA/ADMIN-PANEL">
-		  	<h3 class="playfair text-dark">ADMIN PANEL</h3>
-		  </a>
-		  <h5 class="playfair fw-bold text-dark">{ HTML, CSS, Bootstrap, PHP, SQL, JavaScript }</h5>
-		  <h6 class="trirong text-dark">
-			A website for managing two-step
-			pending lists, featuring an administrative panel for viewing, updating, and deleting data.
-		  </h6>
-		</div>  
-	  </div>
-	  <div class="carousel-item">
-		<img src="image\django.png" alt="New York" class="d-block img-fluid" style="width:1200px; height: 400px;">
-		<div class="carousel-caption">
-		  <a href="https://github.com/PIYAL-DATTA/SERVICE-LICENSE">
-		  	<h3 class="playfair text-dark">SERVICE LICENSE</h3>
-		  </a>
-		  <h5 class="playfair fw-bold text-dark">{ HTML, CSS, Bootstrap, Django, SQL }</h5>
-		  <h6 class="trirong text-dark">
-			License registration website
-			with an admin panel for data
-			viewing, management, and
-			restoration, including PDF
-			and Excel export.
-		  </h6>
-		</div>  
-	  </div>
+  </nav>
+  <!-- EnD Nav -->
+  <canvas></canvas>
+  <video id="videoBackground" muted loop></video>
+  <div id="overlay" style="display: flex; align-items: center; justify-content: center;">
+    <!-- <section class="nav"> -->
+    <h3 class="span loader text-center">
+      <p class="m pb-4 sofia display-1" style="font-weight: 900; color: blueviolet;">HELLO</p>
+      <span class="m pb-1">WELCOM</span>
+      <span class="m pb-1">to</span>
+      <span class="m pb-1">my</span>
+      <span class="m pb-1">PORTFOLIO</span>
+    </h3>
+    <!-- </section> -->
   </div>
-  
-  <!-- Left and right controls/icons -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
-</div>
-</div>
-</div>
 
+  <!-- Home -->
+  <section id="home" class="container"
+    style="display: flex; align-items: center; justify-content: center; padding-top: 15vh;">
+    <div class="card bg-white" style="box-shadow: 8px 8px 8px #ababab;" data-aos="fade-up" data-aos-delay="100">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="img/piyal4.jpg" class="h-100 w-100 rounded-start shadow-lg">
+        </div>
+        <div class="col-md-8" style="display: flex; align-items: center; justify-content: center;">
+          <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+            <h1 class="pt-5 playfair fw-bold">About Me</h1>
+            <h3 class="roboto">Innovative Web Design and Software Developer</h3>
+            <p class="p-4 trirong">
+              Hello, I am <text class="fw-bolder">Piyal Datta</text>, a recent CSE graduate from Ahsanullah University
+              of Science and Technology.
+              I am passionate about web development, a field I’ve loved since my HSC days.
+              I have strong skills in PHP, Django, Bootstrap 5, SQL, JavaScript, HTML, and CSS and some basic knowledge
+              of WordPress.
+              I also have a good knowledge of C/C++, JAVA, Python, and Kotlin.
+              I actively enhance my skills through platforms like FreeCodeCamp and W3 school.
+              I’m eager to contribute my abilities to your team and grow further in this field.<br><br>
+              Also, I am a motivated and fast-learning professional with a keen ability to adapt
+              to modern technologies. Committed to providing efficient solutions
+              and writing clean, comprehensible code, while continuously striving
+              to expand knowledge and skills.
+            </p>
+            <div class="pb-5">
+              <a type="button" class="btn btn-dark btn-lg" href="resume/Piyal Datta CV.pdf" download data-mdb-ripple-init>
+                Resume<i class="fa-solid fa-download ps-2"></i>
+              </a>
+              <a type="button" href="https://github.com/PIYAL-DATTA" class="btn btn-outline-secondary btn-lg" data-mdb-ripple-init
+                data-mdb-ripple-color="dark">Github<i class="fa-brands fa-github ps-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Home -->
+  <!-- Resume -->
+  <section id="resume" class="container" style="padding-top: 20vh;">
+    <!-- <h2 class="playfair fw-bold">Resume</h2> -->
+    <br>
+    <!-- Nav pills -->
+    <ul class="nav nav-pills" role="tablist" style="align-items: center; justify-content: center;">
+      <li class="nav-item">
+        <a class="nav-link active" data-bs-toggle="pill" href="#menu1">EDUCATION</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="pill" href="#menu2">EXPERIENCE</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="pill" href="#menu3">PERSONAL INTEREST</a>
+      </li>
+    </ul>
 
-<!--  info  -->
-<div id="contact" class="p-5 container" style="background-image: linear-gradient(#B2BEB5, #FFFFFF);">
-	<section class="head">
-		<div class="container">
-			<div class="card" style="background-color:#353534; color:white; border-radius: 10px;">
-				<div class="card-body">
-				
-				<div class="row">
-					<div class="col-lg-5 col-md-12 col-sm-12 col-12 text-center pt-3">
-						<img src="image\piyal4.jpg" style="width:95%; height:96%; border-radius: 10px;">
-					</div>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- Education -->
+      <div id="menu1" class="container tab-pane active"><br><br>
+        <!-- <div class="bg-white p-3 rounded"> -->
+        <div class="row border g-0 rounded text-white shadow-sm" data-aos="fade-up" data-aos-delay="100">
+          <div class="col p-4">
+            <h3 class="playfair fw-bold" style="padding:20px;">Undergraduate Level</h3>
+            <ul class="ps-4 roboto">
+              <li><em>Ahsanullah University of Science and Technology</em></li>
+              <li>Deptartment of CSE</li>
+              <li>2020 - 2024</li>
+            </ul>
+          </div>
+          <div class="col-auto p-2">
+            <img src="img\austBG.jpg" class="img-thumbnail dimension" style="width:600px; height:300px">
+          </div>
+        </div>
 
-					<div class="col-lg-7 col-md-12 col-sm-12 col-12 text-center pt-3" style="font-family: 'Montserrat', sans-serif;">
-						<h3 class="text-center py-3" style="font-family: 'Montserrat', sans-serif;">Contact me</h3>
-						<h5 class="text-uppercase mb-4 text-warning pt-3"><i class="fas fa-home mr-3"></i>ADDRESS</h5>
-						<p>Banasree, Rampura, Dhaka, Bangladesh</p>
-						<h5 class="text-uppercase mb-4 text-warning"><i class="fas fa-envelope mr-3"></i>EMAIL</h5>
-						<p>piyaldattactg@gmail.com</p>
-						<h5 class="text-uppercase mb-4 text-warning"><i class="fas fa-phone mr-3"></i>Mobile-number</h5>
-						<p>01763717814</p>
-						<h3 class="text-center py-3 text-warning" style="color: #353534">Follow me</h3>
-						<p class="text-center" style="font-size: 40px">
-							<!--	Facebook	-->
-							<a href="https://www.facebook.com/pial.chy.56"><i class="fa-brands fa-facebook"></i></a>
-							<!--	WhatsApp	-->
-							<i class="fa-brands fa-whatsapp"></i>
-							<!--	Github	-->
-							<a href="https://github.com/PIYAL-DATTA"><i class="fa-brands fa-github"></i></a>
-							<!--	Discord	-->
-							<a href="https://discord.com/channels/Piyal%20Datta#6577"><i class="fa-brands fa-discord"></i></a>
-							<!--	Linkedin	-->
-							<a href="https://www.linkedin.com/in/piyal-datta/"><i class="fa-brands fa-linkedin"></i></a>
-						</p>
-					</div>
-					
-				</div>
-				</div>
-			</div>
-		</div>
-	</section>
-</div>
+        <div class="row border g-0 rounded text-white shadow-sm" data-aos="fade-up" data-aos-delay="100">
+          <div class="col p-4">
+            <h3 class="playfair fw-bold" style="padding:20px">College</h3>
+            <ul class="ps-4 roboto">
+              <li><em>Government Laboratory High School</em></li>
+              <li>Dhaka Board</li>
+              <li>Group : Scienece</li>
+              <li>HSC Passing year : 2019</li>
+            </ul>
+          </div>
+          <div class="col-auto p-2">
+            <img src="img\college.jpg" class="img-thumbnail dimension" style="width:600px; height:300px">
+          </div>
+        </div>
 
-<!--    FOOTER   -->
-<footer class = "bg-dark text-white pt-3 pb-3">
-	<div class="container-fluid text-center">
-		<div class="copyright">
-			&copy; Copyright <strong><span>Piyal</span></strong>
-		</div>
-		<div class="credits">
-			All Rights Reserved by Piyal Datta
-		</div>
-	</div>
-</footer>
+        <div class="row border g-0 rounded text-white shadow-sm" data-aos="fade-up" data-aos-delay="100">
+          <div class="col p-4">
+            <h3 class="playfair fw-bold" style="padding:20px">School</h3>
+            <ul class="ps-4 roboto">
+              <li><em>Rampura Ekramunnesa Boys' High School</em></li>
+              <li>From class 8 to 10</li>
+              <li>Dhaka Board</li>
+              <li>Group : Scienece</li>
+              <li>SSC Passing year : 2016</li>
+              <li>JSC Passing year : 2014</li>
+            </ul>
+          </div>
+          <div class="col-auto p-2">
+            <img src="img\school2.jpg" class="img-thumbnail dimension" style="width:600px; height:300px">
+          </div>
+        </div>
 
+        <div class="row border g-0 rounded text-white shadow-sm" data-aos="fade-up" data-aos-delay="100">
+          <div class="col p-4">
+            <h3 class="playfair fw-bold" style="padding:20px">School</h3>
+            <ul class="ps-4 roboto">
+              <li><em>Chittagong Government Boys' High School</em></li>
+              <li>From class 5 to 7</li>
+              <li>PSC Result : 1st division</li>
+            </ul>
+          </div>
+          <div class="col-auto p-2">
+            <img src="img\school1.jpg" class="img-thumbnail dimension" style="width:600px; height:300px">
+          </div>
+          <!-- </div> -->
+        </div>
+      </div>
+      <!-- End Education -->
+      <!-- Experience -->
+      <div id="menu2" class="container tab-pane"><br><br>
+        <div class="card rounded">
+          <!--  -->
+          <div class="card-body">
+            <div class="row px-3">
+              <div class="col-md-4 shadow-lg bg-light rounded p-5 roboto"
+                style="background-image: url(img/blossom.png); background-repeat: no-repeat; background-size: 100% 70%; background-position-x: left;">
+                <h3>IT Division, Bashundhara Group.
+                  </h2>
+                  <h5>Application Competence Centre (ACC)
+                </h3>
+                <h5 class="fw-light">Dhaka, BD</h5>
+                <h6 class="fst-italic">Internship</h6>
+              </div>
+              <div class="col-md-8 shadow-lg rounded p-5 trirong"
+                style="display: flex; align-items: center; justify-content: center;">
+                I completed a three-month Internship
+                as a Web developer at the Application Competence Centre (ACC),
+                IT Division, Sector-C, Bashundhara Group.
+              </div>
+            </div>
+          </div>
+          <!--  -->
+        </div>
+      </div>
+      <!-- End Experience -->
+      <!-- Personal Interest -->
+      <div id="menu3" class="container tab-pane"><br><br>
+        <div class="border g-0 rounded p-3">
+          <div class="row text-center text-white fw-bold">
+            <div class="col-md-4" style="overflow: hidden;">
+              <br>
+              <p>MOVIES</p><br>
+              <img
+                src="https://images.moviesanywhere.com/4d9df0e6b0bd732b3d1fa967b5b919fa/1adaca39-ae5e-4867-91fd-6025d3d08eb4.jpg"
+                class="border" style="width: 100%; height: 600px; object-fit: cover;">
+            </div>
+            <div class="col-md-4" style="overflow: hidden;">
+              <br>
+              <p>SERIES</p><br>
+              <img
+                src="https://m.media-amazon.com/images/M/MV5BOTk2NzUyOTctZDdlMS00MDJlLTgzNTEtNzQzYjFhNjA0YjBjXkEyXkFqcGdeQXVyMjg1NDcxNDE@._V1_FMjpg_UX1000_.jpg"
+                class="border" style="width: 100%; height: 600px; object-fit: cover;">
+            </div>
+            <div class="col-md-4" style="overflow: hidden;">
+              <br>
+              <p>ANIMES & MANGA</p><br>
+              <img src="img\anime.jpg" class="border" style="width: 100%; height: 600px; object-fit: cover;">
+            </div>
+          </div>
+          <div class="row text-center text-white fw-bold">
+            <div class="col-md-4" style="overflow: hidden;">
+              <br>
+              <p>GAMES</p><br>
+              <img src="img\game.jpg" class="border" style="width: 100%; height: 600px; object-fit: cover;">
+            </div>
+            <div class="col-md-4" style="overflow: hidden;">
+              <br>
+              <p>READING BOOK</p><br>
+              <img src="https://upload.wikimedia.org/wikipedia/en/2/21/Feluda_and_Topshe.jpg"
+                style="width: 100%; height: 600px; object-fit: cover;">
+            </div>
+            <div class="col-md-4" class="border" style="overflow: hidden;">
+              <br>
+              <p>SCIENCE</p><br>
+              <img src="img\science.jpg" class="border" style="width: 100%; height: 600px; object-fit: cover;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Resume -->
+  <!-- Title Skills -->
+  <div class="text container" style="padding-top: 15vh;">
+    Skills
+  </div>
+  <!-- End of Title -->
+  <!-- Skill -->
+  <section class="container mt-5">
+    <!-- Skillset Card-->
+    <div class="card shadow border-0 rounded-4 mb-5"
+      style="background-image: linear-gradient(135deg, #FFFFFF, #BCC6CC, #FFFFFF, #BCC6CC, #FFFFFF, #BCC6CC, #FFFFFF, #BCC6CC, #FFFFFF, #BCC6CC, #FFFFFF);">
+      <div class="card-body p-5">
+        <!-- Professional skills list-->
+        <div class="mb-5">
+          <div class="d-flex align-items-center mb-4">
+            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+              <i class="bi bi-tools"></i>
+            </div>
+            <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline playfair fw-bold">Professional Skills</span>
+            </h3>
+          </div>
+          <div class="row row-cols-1 row-cols-md-3 mb-4 roboto">
+            <div class="col mb-4 mb-md-0">
+              <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow-lg hvr">
+                Web Development</div>
+            </div>
+            <div class="col mb-4 mb-md-0">
+              <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow-lg hvr">
+                Software Development</div>
+            </div>
+            <div class="col">
+              <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow-lg hvr">
+                Teamwork</div>
+            </div>
+          </div>
+          <div class="row row-cols-1 row-cols-md-3 roboto">
+            <div class="col mb-4 mb-md-0">
+              <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow-lg hvr">
+                Leadership</div>
+            </div>
+            <div class="col mb-4 mb-md-0">
+              <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow-lg hvr">
+                Project Management</div>
+            </div>
+            <div class="col">
+              <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow-lg hvr">
+                Skill Development</div>
+            </div>
+          </div>
+        </div>
+        <!-- Languages list-->
+        <div class="mb-0">
+          <div class="d-flex align-items-center mb-4">
+            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+              <i class="bi bi-code-slash"></i>
+            </div>
+            <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline playfair fw-bold">Languages</span></h3>
+          </div>
+          <div class="row row-cols-1 row-cols-md-3 mb-4 roboto">
+            <div class="col mb-4 mb-md-0">
+              <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow-lg hvr">
+                HTML</div>
+            </div>
+            <div class="col mb-4 mb-md-0">
+              <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow-lg hvr">
+                CSS</div>
+            </div>
+            <div class="col">
+              <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow-lg hvr">
+                JavaScript</div>
+            </div>
+          </div>
+          <div class="row row-cols-1 row-cols-md-3 mb-4 roboto">
+            <div class="col mb-4 mb-md-0">
+              <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow-lg hvr">
+                Bootstrap 5</div>
+            </div>
+            <div class="col mb-4 mb-md-0">
+              <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow-lg hvr">
+                PHP</div>
+            </div>
+            <div class="col">
+              <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow-lg hvr">
+                Django</div>
+            </div>
+          </div>
+          <div class="row row-cols-1 row-cols-md-3 mb-4 roboto">
+            <div class="col mb-4 mb-md-0">
+              <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow-lg hvr">
+                SQL, MySQL</div>
+            </div>
+            <div class="col mb-4 mb-md-0">
+              <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow-lg hvr">
+                Kotlin</div>
+            </div>
+            <div class="col">
+              <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow-lg hvr">
+                WebGL, Three.js, React-fiber</div>
+            </div>
+          </div>
+          <div class="row row-cols-1 row-cols-md-3 roboto">
+            <div class="col mb-4 mb-md-0">
+              <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow-lg hvr">
+                Python</div>
+            </div>
+            <div class="col mb-4 mb-md-0">
+              <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow-lg hvr">
+                Java</div>
+            </div>
+            <div class="col">
+              <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow-lg hvr">
+                C/C++</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+  </div>
+  </section>
+  <!--END Skill -->
+  <!-- Title Portfolio -->
+  <div id="projects" class="text container" style="padding-top: 15vh;">
+    Portfolios
+  </div>
+  <!-- End of Portfolio -->
+  <!-- Project -->
+  <section class="container mt-5 mb-5">
+    <div class="row" style="display: flex; align-items: center; justify-content: center;">
+      <div class="col-lg-4 col-md-6 pb-4">
+        <div class="card text-center p-3 pj_card" data-aos="fade-up" data-aos-delay="150">
+          <br>
+          <h4 class="fw-bold sofia" style="text-shadow: 3px 3px 3px #ababab;">
+            DONOR
+          </h4>
+          <h6 class="roboto">{ HTML, CSS, Bootstrap 4, PHP, SQL }</h6>
+          <br>
+          <div class="card-body rounded shadow-lg pj_body">
+            <p class="trirong p-2">
+              Donor search<br>
+              Login/ Logout/ Registration<br>
+              Login/ Logout authentication<br>
+              User authentication<br>
+              Email verification<br>
+              Administrative panel<br>
+              Help & feedback<br>
+              Insert, delete and update data
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-lg-4 col-md-6 pb-4">
+        <div class="card text-center p-3 pj_card" data-aos="fade-up" data-aos-delay="200">
+          <br>
+          <h4 class="fw-bold sofia" style="text-shadow: 3px 3px 3px #ababab;">PORTFOLIO
+          </h4>
+          <h6 class="roboto">{ HTML, CSS, Bootstrap 5, JS }</h6>
+          <br>
+          <div class="card-body rounded shadow-lg pj_body">
+            <p class="trirong p-2">
+              User Friendly<br>
+              Easy Navigation<br>
+              Responsive<br>
+              Can download Resume<br>
+              Project Showcasing<br>
+              Necessary link and Contact information<br>
+              Location in google map
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-lg-4 col-md-6 pb-4">
+        <div class="card text-center p-3 pj_card" data-aos="fade-up" data-aos-delay="250">
+          <br>
+          <h4 class="fw-bold sofia" style="text-shadow: 3px 3px 3px #ababab;">HOSPITAL WEBSITE
+          </h4>
+          <h6 class="roboto">{ HTML, CSS, Bootstrap 5, JS, PHP, SQL }</h6>
+          <br>
+          <div class="card-body rounded shadow-lg pj_body">
+            <p class="trirong p-3">
+              Login/ Logout/ Registration<br>
+              Login/ Logout authentication<br>
+              User authentication<br>
+              Administrative panel<br>
+              Insert, delete and update data<br>
+              Showcasing available doctors and their specialty<br>
+              About hospital<br>
+              Online serial for doctor
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-lg-4 col-md-6 pb-4">
+        <div class="card text-center p-3 pj_card" data-aos="fade-up" data-aos-delay="150">
+          <br>
+          <h4 class="fw-bold sofia" style="text-shadow: 3px 3px 3px #ababab;">SERVICE LICENSE
+          </h4>
+          <h6 class="roboto">{ HTML, CSS, Bootstrap 5, JS, Django, SQL }</h6>
+          <br>
+          <div class="card-body rounded shadow-lg pj_body">
+            <p class="trirong p-2">
+              Apply Form<br>
+              Login/ Logout/ Registration<br>
+              Login/ Logout authentication<br>
+              User authentication<br>
+              Administrative panel<br>
+              Insert, delete, update, edit and restore data<br>
+              Data Showcasing<br>
+              Specific user-based data availability<br>
+              2 type Search. Based on date + service and normal search<br>
+              PDF and Excel export of data<br>
+              New window option
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-lg-4 col-md-6 pb-4">
+        <div class="card text-center p-3 pj_card" data-aos="fade-up" data-aos-delay="200">
+          <br>
+          <h4 class="fw-bold sofia" style="text-shadow: 3px 3px 3px #ababab;">Web-Automation
+          </h4>
+          <h6 class="roboto">{ JAVA, Selenium }</h6>
+          <br>
+          <div class="card-body rounded shadow-lg pj_body">
+            <p class="trirong p-2">A Web-Automation solution
+              for Manobkontho was developed utilizing Java and Selenium.<br>
+              Checked on Navbar, Top News, E-paper, Sidebar and many more link and buttons.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-lg-4 col-md-6 pb-4">
+        <div class="card text-center p-3 pj_card" data-aos="fade-up" data-aos-delay="250">
+          <br>
+          <h4 class="fw-bold sofia" style="text-shadow: 3px 3px 3px #ababab;">C COMPILER
+          </h4>
+          <h6 class="roboto">{ C/C++ }</h6>
+          <br>
+          <div class="card-body rounded shadow-lg pj_body">
+            <p class="trirong p-2">
+              A basic compiler for the C programming language, developed as
+              part of university assignment.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-lg-4 col-md-6 pb-4">
+        <div class="card text-center p-3 pj_card" data-aos="fade-up" data-aos-delay="150">
+          <br>
+          <h4 class="fw-bold sofia" style="text-shadow: 3px 3px 3px #ababab;">CGPA Generator
+          </h4>
+          <h6 class="roboto">{ JAVA, JAVA Swing }</h6>
+          <br>
+          <div class="card-body rounded shadow-lg pj_body">
+            <p class="trirong p-2">
+              Software for automatically calculating CGPA based on student's marks, tailored to the AUST CGPA system.<br>
+              User-friendly<br>
+              Can calculate all Department students CGPA<br>
+              Store student Information & CGPA
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <!--  -->
+      <div class="col-lg-4 col-md-6 pb-4">
+        <div class="card text-center p-3 pj_card" data-aos="fade-up" data-aos-delay="150">
+          <br>
+          <h4 class="fw-bold sofia" style="text-shadow: 3px 3px 3px #ababab;">SHOP DATABASE</h4>
+          <h6 class="roboto">{ SQL/MySQL }</h6>
+          <br>
+          <div class="card-body rounded shadow-lg pj_body">
+            <p class="trirong p-2">
+              A database system for managing a cosmetic shop chain, including local branches, sales, inventory, and search functionality.
+              Some of it's features are :<br>
+              Search option<br>
+              Insert, delete, update and edit data<br>
+              creating relation between different tables<br>
+              Showcasing data<br>
+              Specific user-based data availability<br>
+              Login/ Registration<br>
+              User authentication
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <!--  -->
+      <div class="col-lg-4 col-md-6 pb-4">
+        <div class="card text-center p-3 pj_card" data-aos="fade-up" data-aos-delay="150">
+          <br>
+          <h4 class="fw-bold sofia" style="text-shadow: 3px 3px 3px #ababab;">GAMES
+          </h4>
+          <h6 class="roboto">{ C/C++, JAVA, Kotlin }</h6>
+          <br>
+          <div class="card-body rounded shadow-lg pj_body">
+            <p class="trirong p-2">
+              Developed a balloon-shooting game using C/C++ featuring :<br>
+              Levels<br>
+              Lifes<br>
+              Background Sound<br>
+              Scores<br>
+              Developed Android game using Kotlin and Java, similar to Flappy Bird but featuring bullets instead of walls.
+              Some of it's features :<br>
+              Highest Score track<br>
+              Increase difficulty based on score<br>
+              Lifes<br>
+              Background Sound
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+    </div>
+  </section>
+  <!-- End Project -->
+  <!-- Title References -->
+  <div class="text container" style="padding-top: 15vh;">
+    References
+  </div>
+  <!-- End of Title -->
+  <section class="container-fluid" style="padding-top: 5vh;">
+    <div id="ref">
+      <div class="container text-center">
+        <p class="kanit">The following references represent the sources I have utilized for
+          assistance, all
+          of which consist of freely accessible resources available on the internet.</p>
+      </div>
+      <div class="Marquee">
+        <div class="Marquee-forward">
+          <div class="Marquee-tag"><i class="fa-brands fa-codepen pe-2"></i>CodePen</div>
+          <div class="Marquee-tag"><span class="text-success pe-2">W3</span>W3 School</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-free-code-camp pe-2"></i>FreeCodeCamp
+          </div>
+          <div class="Marquee-tag"><i class="fa-brands fa-google pe-2"></i>Google</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-youtube pe-2 text-danger"></i>YouTube</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-codepen pe-2"></i>CodePen</div>
+          <div class="Marquee-tag"><span class="text-success pe-2">W3</span>W3 School</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-free-code-camp pe-2"></i>FreeCodeCamp
+          </div>
+          <div class="Marquee-tag"><i class="fa-brands fa-google pe-2"></i>Google</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-youtube pe-2 text-danger"></i>YouTube</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-codepen pe-2"></i>CodePen</div>
+          <div class="Marquee-tag"><span class="text-success pe-2">W3</span>W3 School</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-free-code-camp pe-2"></i>FreeCodeCamp
+          </div>
+          <div class="Marquee-tag"><i class="fa-brands fa-google pe-2"></i>Google</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-youtube pe-2 text-danger"></i>YouTube</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-codepen pe-2"></i>CodePen</div>
+          <div class="Marquee-tag"><span class="text-success pe-2">W3</span>W3 School</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-free-code-camp pe-2"></i>FreeCodeCamp
+          </div>
+          <div class="Marquee-tag"><i class="fa-brands fa-google pe-2"></i>Google</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-youtube pe-2 text-danger"></i>YouTube</div>
+        </div>
+      </div>
+      <div class="Marquee">
+        <div class="Marquee-backward">
+          <div class="Marquee-tag"><i class="fa-brands fa-codepen pe-2"></i>CodePen</div>
+          <div class="Marquee-tag"><span class="text-success pe-2">W3</span>W3 School</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-free-code-camp pe-2"></i>FreeCodeCamp
+          </div>
+          <div class="Marquee-tag"><i class="fa-brands fa-google pe-2"></i>Google</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-youtube pe-2 text-danger"></i>YouTube</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-codepen pe-2"></i>CodePen</div>
+          <div class="Marquee-tag"><span class="text-success pe-2">W3</span>W3 School</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-free-code-camp pe-2"></i>FreeCodeCamp
+          </div>
+          <div class="Marquee-tag"><i class="fa-brands fa-google pe-2"></i>Google</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-youtube pe-2 text-danger"></i>YouTube</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-codepen pe-2"></i>CodePen</div>
+          <div class="Marquee-tag"><span class="text-success pe-2">W3</span>W3 School</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-free-code-camp pe-2"></i>FreeCodeCamp
+          </div>
+          <div class="Marquee-tag"><i class="fa-brands fa-google pe-2"></i>Google</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-youtube pe-2 text-danger"></i>YouTube</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-codepen pe-2"></i>CodePen</div>
+          <div class="Marquee-tag"><span class="text-success pe-2">W3</span>W3 School</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-free-code-camp pe-2"></i>FreeCodeCamp
+          </div>
+          <div class="Marquee-tag"><i class="fa-brands fa-google pe-2"></i>Google</div>
+          <div class="Marquee-tag"><i class="fa-brands fa-youtube pe-2 text-danger"></i>YouTube</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- References -->
+  <!-- <section class="container-fluid" style="padding-top: 15vh;">
+    <div class="banner" style="display: flex; align-items: center; justify-content: center;">
+      <div class="slider" style="--quantity: 6"> -->
+  <!-- Item starts -->
+  <!-- <div class="item" style="--position: 1">
+          <div class="card" style="background-image: linear-gradient(45deg, #ffffff, #000000, #ffffff);">
+            <div class="card-body">
+              <input class="form-control text-center" type="text" value="CODEPEN" disabled readonly>
+            </div>
+          </div>
+        </div>
+        <div class="item" style="--position: 2">
+          <div class="card" style="background-image: linear-gradient(45deg, #ffffff, #008000, #ffffff);">
+            <div class="card-body">
+              <input class="form-control text-center" type="text" value="W3 School" disabled readonly>
+            </div>
+          </div>
+        </div>
+        <div class="item" style="--position: 3">
+          <div class="card" style="background-image: linear-gradient(45deg, #000000, #ffffff);">
+            <div class="card-body">
+              <input class="form-control text-center" type="text" value="FreeCodeCamp" disabled readonly>
+            </div>
+          </div>
+        </div>
+        <div class="item" style="--position: 4">
+          <div class="card bg-white">
+            <div class="card-body">
+              <input class="form-control text-center" type="text" value="Google" disabled readonly>
+            </div>
+          </div>
+        </div>
+        <div class="item" style="--position: 5">
+          <div class="card bg-primary">
+            <div class="card-body">
+              <input class="form-control text-center" type="text" value="Free resources" disabled readonly>
+            </div>
+          </div>
+        </div>
+        <div class="item" style="--position: 6">
+          <div class="card" style="background-color: #FF0000;">
+            <div class="card-body">
+              <input class="form-control text-center" type="text" value="YouTube videos" disabled readonly>
+            </div>
+          </div>
+        </div> -->
+  <!-- 7 item for 3D -->
+  <!-- </div>
+    </div>
+  </section> -->
+  <!-- END of References -->
+  <!--  Info  -->
+  <section id="contact" class="head" style="padding-top: 15vh;">
+    <footer class="footer-section">
+      <div class="container">
+        <div class="footer-cta pt-5 pb-5">
+          <div class="row">
+            <div class="col-xl-4 col-md-4 mb-30">
+              <div class="single-cta">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="cta-text">
+                  <h4>Address</h4>
+                  <span>Banasree, Rampura, Dhaka-1219</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-4 mb-30">
+              <div class="single-cta">
+                <i class="fas fa-phone"></i>
+                <div class="cta-text">
+                  <h4>Call us</h4>
+                  <span>+880 1763717814</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-4 mb-30">
+              <div class="single-cta">
+                <i class="far fa-envelope-open"></i>
+                <div class="cta-text">
+                  <h4>Mail us</h4>
+                  <span>piyaldattactg@gmail.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center pt-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #3b5998;"
+            href="https://www.facebook.com/pial.chy.56" role="button"><i class="fab fa-facebook-f"></i></a>
 
+          <!-- Twitter
+          <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #55acee;"
+            href="https://twitter.com/IamTIqbal" role="button"><i class="fab fa-twitter"></i></a> -->
+
+          <!-- Email -->
+          <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #ac2bac;"
+            href="mailto:piyaldattactg@gmail.com" role="button"><i class="fa fa-envelope"></i></a>
+
+          <!-- Linkedin -->
+          <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #0082ca;"
+            href="https://www.linkedin.com/in/piyal-datta/" role="button"><i class="fab fa-linkedin-in"></i></a>
+          <!-- Github -->
+          <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #333333;"
+            href="https://github.com/PIYAL-DATTA" role="button"><i class="fab fa-github"></i></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <div class="container-fluid">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d767.6467089473384!2d90.42989150498418!3d23.762932678351543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b87562ec64cd%3A0xa00b2fae2e608e33!2sBangkok%20Laundry%20Service!5e0!3m2!1sen!2sbd!4v1732708271037!5m2!1sen!2sbd"
+          width="100%" height="400px" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="copyright-area">
+        <div class="container">
+          <div class="copyright-text text-center sofia">
+            <p>Copyright &copy; 2024, All Right Reserved <a href="https://piyal-datta.github.io/">Piyal Datta</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+  <!-- End Info -->
+  <script src="js/script.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <!-- End AOS JS -->
 </body>
+
 </html>
