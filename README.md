@@ -1,3 +1,2 @@
 # Portfolio
-# Live Link:
-https://piyal-datta.github.io/
+Live Link: https://piyal-datta.github.io/
