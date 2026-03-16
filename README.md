@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🌐 Piyal Datta — Personal Portfolio
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-piyal--datta.github.io-blue?style=for-the-badge&logo=github)](https://piyal-datta.github.io/)
@@ -122,3 +123,7 @@ This is a **static website** — no build step or server required.
 ## 📜 License
 
 © 2025 Piyal Datta. All Rights Reserved.
+=======
+# Portfolio
+Live Link: https://piyal-datta.github.io/
+>>>>>>> 01333edb576e9fdd15f0974bb56e4ca422263279
